@@ -1,6 +1,8 @@
 package noyl.DAO;
 
 import noyl.DatabaseConnection.DatabaseConnection;
+import noyl.util.HashPwd;
+import org.mindrot.jbcrypt.BCrypt;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -9,20 +11,25 @@ import java.sql.SQLException;
 
 public class LoginDao {
 
-    public static boolean authentication(String phoneNumber, String password){
+    public static boolean authentication(String phoneNumber, String password) {
         try (Connection connection = DatabaseConnection.getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM user WHERE PhoneNumber = ? AND pwd = ?")) {
+             PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM user WHERE PhoneNumber = ?")) {
 
             preparedStatement.setString(1, phoneNumber);
-            preparedStatement.setString(2, password);
 
             try (ResultSet resultSet = preparedStatement.executeQuery()) {
-                return resultSet.next(); // If there is a matching user, return true
+                if (resultSet.next()) {
+                    // Retrieve hashed password from the database
+                    String hashedPassword = resultSet.getString("pwd");
+
+                    // Check if the provided password matches the hashed password
+                    return HashPwd.verifyPasswordWithSalt(password, hashedPassword);
+                }
             }
 
         } catch (SQLException e) {
             e.printStackTrace();
-            return false;
         }
+        return false;
     }
 }

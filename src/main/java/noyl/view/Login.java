@@ -2,9 +2,11 @@ package noyl.view;
 
 import com.formdev.flatlaf.FlatClientProperties;
 import net.miginfocom.swing.MigLayout;
+import noyl.controller.RegisterController;
 
 import javax.swing.*;
 import java.awt.*;
+import java.io.IOException;
 
 public class Login extends JFrame {
 
@@ -52,7 +54,16 @@ public class Login extends JFrame {
         textPassword = new JPasswordField();
         chRememberMe = new JCheckBox("Remember me");
         cmdLogin = new JButton("Login");
-        JPanel loginPanel = new JPanel(new MigLayout("wrap,fillx,insets 35 45 30 45", "fill,250:280"));
+        cmdLogin.addActionListener(e -> {
+            this.setVisible(false);
+            try {
+                ChatApplication chat = new ChatApplication();
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
+            }
+        });
+
+                JPanel loginPanel = new JPanel(new MigLayout("wrap,fillx,insets 35 45 30 45", "fill,250:280"));
         loginPanel.putClientProperty(FlatClientProperties.STYLE, "" +
                 "arc:20;"+
                 "[light]background:darken(@background,3%);"+

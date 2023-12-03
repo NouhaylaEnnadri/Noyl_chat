@@ -4,6 +4,7 @@ import com.formdev.flatlaf.FlatClientProperties;
 import com.formdev.flatlaf.FlatDarkLaf;
 
 import javax.swing.*;
+import javax.swing.border.Border;
 import javax.swing.plaf.basic.BasicButtonUI;
 import java.awt.*;
 import java.awt.geom.Ellipse2D;
@@ -48,16 +49,18 @@ public class ChatApplication extends JFrame {
 
         leftContact.setPreferredSize(new Dimension(70, getHeight())); // Set the preferred size
 
-        ImageIcon prmtre = new ImageIcon("noyl/images/photo_2023-02-11_14-51-34-removebg-preview.png.jpg");
+        JButton logout = new JButton("Logout"); // Add the path to your image file
 
 
-        // Create a JLabel with the ImageIcon
-        JLabel label = new JLabel(prmtre);
+        // Set button alignment to the left
+        logout.setAlignmentX(Component.LEFT_ALIGNMENT);
 
-        // Add the label to the panel
-        leftContact.add(label);
+        Border customBorder = BorderFactory.createLineBorder(Color.decode("#7a7a7a"), 6); // Example: Blue border with a width of 2 pixels
+        logout.setBorder(customBorder);
+        leftContact.add(Box.createVerticalGlue()); // Push components to the bottom
+        leftContact.add(logout);
 
-        // Add button to the panel
+
         chatApplication.add(leftContact, BorderLayout.WEST);
     }
 

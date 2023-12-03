@@ -1,6 +1,7 @@
 package noyl.DAO;
 
 import noyl.DatabaseConnection.DatabaseConnection;
+import noyl.util.HashPwd;
 
 import java.io.File;
 import java.io.IOException;
@@ -19,8 +20,8 @@ public class RegisterDao {
 
             preparedStatement.setLong(1, phoneNumber);
             preparedStatement.setString(2, name);
-            preparedStatement.setString(3, password);
-            preparedStatement.setString(4, vPassword);
+            preparedStatement.setString(3, HashPwd.hashPassword(password));
+            preparedStatement.setString(4, HashPwd.hashPassword(vPassword));
             // Convert image to byte array
             byte[] imageData = Files.readAllBytes(picture.toPath());
 

@@ -4,23 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="28ca4385-316a-4aa0-bb98-79115f04a349" name="Changes" comment="still first">
-      <change afterPath="$PROJECT_DIR$/src/main/java/noyl/images/adjust.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/noyl/images/photo_2023-02-11_14-51-34-removebg-preview.png.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/noyl/util/PasswordValidation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/noyl/view/ChatApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/noyl/view/component/pwdStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
+    <list default="true" id="28ca4385-316a-4aa0-bb98-79115f04a349" name="Changes" comment="verify the strength of a password">
+      <change afterPath="$PROJECT_DIR$/src/main/java/noyl/images/Screenshot (379).png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/noyl/util/HashPwd.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/noyl/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/noyl/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/noyl/controller/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/noyl/controller/RegisterController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/noyl/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/noyl/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/noyl/DAO/LoginDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/noyl/DAO/LoginDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/noyl/DAO/RegisterDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/noyl/DAO/RegisterDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/noyl/view/ChatApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/noyl/view/ChatApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/noyl/view/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/noyl/view/Login.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/noyl/view/Register.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/noyl/view/Register.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/noyl/view/chatApp.form" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/noyl/view/chatApp.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/noyl/view/hello.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/noyl/themes/FlatLaf.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/noyl/themes/FlatLaf.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +80,14 @@
       <option name="project" value="LOCAL" />
       <updated>1700431078172</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="verify the strength of a password">
+      <created>1701633295032</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1701633295032</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -104,6 +103,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="still first" />
-    <option name="LAST_COMMIT_MESSAGE" value="still first" />
+    <MESSAGE value="verify the strength of a password" />
+    <option name="LAST_COMMIT_MESSAGE" value="verify the strength of a password" />
   </component>
 </project>
