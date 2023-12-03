@@ -37,7 +37,7 @@ public class Login extends JFrame {
     public  Login(){
 
 
-         FrameInit();
+        FrameInit();
         setTitle("NOYL Login");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(new Dimension(400,500));

@@ -7,6 +7,7 @@ import noyl.model.RegisterModel;
 import noyl.view.Login;
 import noyl.view.Register;
 
+import javax.swing.*;
 import java.sql.SQLException;
 
 public class RegisterController {
@@ -14,8 +15,7 @@ public class RegisterController {
     private RegisterDao dao;
     private RegisterModel model;
     private Register view ;
-    private Login login;
-    private LoginController loginController;
+
 
     public RegisterController(Register view){
 
@@ -47,7 +47,8 @@ public class RegisterController {
                 System.out.println(" Registration successful");
                 switchToLoginFrame();
             } else {
-                System.out.println(" Registration failed");
+                JOptionPane.showMessageDialog(null, "I guess you are already a part of us. Please go to the login page.", "Warning", JOptionPane.WARNING_MESSAGE);
+
             }
         } catch (Exception e) {
             e.printStackTrace();

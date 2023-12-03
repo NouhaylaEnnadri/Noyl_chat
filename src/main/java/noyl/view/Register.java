@@ -2,6 +2,7 @@ package noyl.view;
 
 import com.formdev.flatlaf.FlatClientProperties;
 import net.miginfocom.swing.MigLayout;
+import noyl.view.component.pwdStatus;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -24,6 +25,7 @@ public class Register extends JFrame {
     private JButton cmdUploadPhoto;
     private JLabel lblImagePreview;
     private JButton justLogin;
+    private pwdStatus passwordStrengthStatus;
 
     public Register() {
         initializeFrame();
@@ -45,6 +47,8 @@ public class Register extends JFrame {
         terms_conditions = new JCheckBox("I accept terms & conditions ");
         cmdRegister = new JButton("Register");
         lblImagePreview = new JLabel();
+        passwordStrengthStatus = new pwdStatus();
+
         lblImagePreview.setPreferredSize(new Dimension(200, 200));
 
         JPanel loginPanel = new JPanel(new MigLayout("wrap,fillx,insets 35 45 30 45", "fill,250:280"));
@@ -72,7 +76,7 @@ public class Register extends JFrame {
                 "[light]background:lighten(@foreground,30%);" +
                 "[dark]background:darken(@foreground,30%);"
         );
-
+        passwordStrengthStatus.initPasswordField(textPassword);
         loginPanel.add(lbTitle);
         loginPanel.add(description);
         loginPanel.add(new JLabel("Phone number"), "gapy 8");
@@ -81,7 +85,8 @@ public class Register extends JFrame {
         loginPanel.add(textUsername);
         loginPanel.add(new JLabel("Password"), "gapy 8");
         loginPanel.add(textPassword);
-        loginPanel.add(new JLabel("Confirm password"), "gapy 8");
+        loginPanel.add(passwordStrengthStatus,"gapy 0");
+        loginPanel.add(new JLabel("Confirm password"), "gapy 0");
         loginPanel.add(verifyTextPassword);
         loginPanel.add(cmdUploadPhoto, "gapy 5");
         loginPanel.add(terms_conditions, "grow 0");
@@ -134,6 +139,7 @@ public class Register extends JFrame {
     }
 
     // Getters and setters methods
+
 
     public File getSelectedFile() {
         return selectedFile;
@@ -206,7 +212,6 @@ public class Register extends JFrame {
     public void setCmdUploadPhoto(JButton cmdUploadPhoto) {
         this.cmdUploadPhoto = cmdUploadPhoto;
     }
-
     public JLabel getLblImagePreview() {
         return lblImagePreview;
     }
@@ -219,7 +224,9 @@ public class Register extends JFrame {
         return justLogin;
     }
 
+    /* ... getters and setters */
     public void setJustLogin(JButton justLogin) {
         this.justLogin = justLogin;
     }
+    // end of
 }

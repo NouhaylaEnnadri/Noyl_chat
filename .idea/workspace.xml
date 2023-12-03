@@ -4,30 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="28ca4385-316a-4aa0-bb98-79115f04a349" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/noyl/DAO/LoginDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/noyl/DAO/RegisterDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/noyl/DatabaseConnection/DatabaseConnection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/noyl/controller/LoginController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/noyl/controller/RegisterController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/noyl/main/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/noyl/model/LoginModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/noyl/model/RegisterModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/noyl/view/Login.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/noyl/view/Register.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/noyl/view/chatApp.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/noyl/view/chatApp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/noyl/themes/FlatDarkLaf.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/noyl/themes/FlatLaf.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/noyl/themes/FlatLightLaf.properties" afterDir="false" />
+    <list default="true" id="28ca4385-316a-4aa0-bb98-79115f04a349" name="Changes" comment="still first">
+      <change afterPath="$PROJECT_DIR$/src/main/java/noyl/images/adjust.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/noyl/images/photo_2023-02-11_14-51-34-removebg-preview.png.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/noyl/util/PasswordValidation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/noyl/view/ChatApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/noyl/view/component/pwdStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/noyl/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/noyl/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/noyl/controller/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/noyl/controller/RegisterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/noyl/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/noyl/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/noyl/view/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/noyl/view/Login.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/noyl/view/Register.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/noyl/view/Register.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/noyl/view/chatApp.form" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/noyl/view/chatApp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/noyl/view/hello.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/noyl/themes/FlatLaf.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/noyl/themes/FlatLaf.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,19 +46,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/lenovo/Downloads/flatlaf-3.2.5.jar&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "168",
+    "last_opened_file_path": "C:/Users/lenovo/Downloads/svgSalamander-1.1.4.jar",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "project.scopes"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\lenovo\OneDrive\Bureau\NoylChatAplication\src\main\java\noyl\images" />
       <recent name="C:\Users\lenovo\OneDrive\Bureau\NoylChatAplication\src\main\java\noyl\view" />
     </key>
   </component>
@@ -78,6 +74,21 @@
       <option name="presentableId" value="Default" />
       <updated>1699957568178</updated>
     </task>
+    <task id="LOCAL-00001" summary="still first">
+      <created>1700431011467</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1700431011467</updated>
+    </task>
+    <task id="LOCAL-00002" summary="still first">
+      <created>1700431078171</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1700431078172</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -90,5 +101,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="still first" />
+    <option name="LAST_COMMIT_MESSAGE" value="still first" />
   </component>
 </project>

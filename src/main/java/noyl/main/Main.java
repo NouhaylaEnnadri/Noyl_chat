@@ -3,6 +3,7 @@ package noyl.main;
 import com.formdev.flatlaf.*;
 import com.formdev.flatlaf.fonts.roboto.FlatRobotoFont;
 import com.formdev.flatlaf.themes.FlatMacDarkLaf;
+import noyl.view.ChatApplication;
 
 import javax.swing.*;
 import java.awt.*;

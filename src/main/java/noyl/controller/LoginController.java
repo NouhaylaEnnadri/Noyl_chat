@@ -5,6 +5,7 @@ import noyl.model.LoginModel;
 import noyl.view.Login;
 import noyl.view.Register;
 
+import javax.swing.*;
 import java.sql.SQLException;
 
 public class LoginController {
@@ -39,7 +40,7 @@ public class LoginController {
            }
            else{
 
-               System.out.println(" who are u bitch");
+                JOptionPane.showMessageDialog(null, "I guess you are not a part of this app yet . Please go to the the register page.", "Error", JOptionPane.ERROR_MESSAGE);
            }
         }catch(Exception e){
             e.printStackTrace();
