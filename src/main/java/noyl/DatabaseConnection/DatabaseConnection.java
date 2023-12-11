@@ -24,6 +24,8 @@ public class DatabaseConnection {
         } catch (SQLException e) {
             // Print the stack trace in case of an exception
             e.printStackTrace();
+            System.out.println("Database connection error!");
+
         }
     }
     public static Connection getConnection() throws SQLException {

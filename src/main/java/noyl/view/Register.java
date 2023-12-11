@@ -14,7 +14,7 @@ import java.io.IOException;
 
 public class Register extends JFrame {
 
-    private File selectedFile;
+    private static File selectedFile;
     private JTextField textUsername;
     private JTextField phoneNumber;
     private JTextField email;
@@ -23,7 +23,7 @@ public class Register extends JFrame {
     private JCheckBox terms_conditions;
     private JButton cmdRegister;
     private JButton cmdUploadPhoto;
-    private JLabel lblImagePreview;
+    private static JLabel lblImagePreview;
     private JButton justLogin;
     private pwdStatus passwordStrengthStatus;
 
@@ -128,7 +128,7 @@ public class Register extends JFrame {
         return panel;
     }
 
-    private void displayImage(File file, int width, int height) {
+    static void displayImage(File file, int width, int height) {
         try {
             Image originalImage = ImageIO.read(file);
             Image resizedImage = originalImage.getScaledInstance(width, height, Image.SCALE_SMOOTH);
@@ -141,7 +141,7 @@ public class Register extends JFrame {
     // Getters and setters methods
 
 
-    public File getSelectedFile() {
+    public static File getSelectedFile() {
         return selectedFile;
     }
 

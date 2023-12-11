@@ -3,10 +3,12 @@ package noyl.view;
 import com.formdev.flatlaf.FlatClientProperties;
 import com.formdev.flatlaf.FlatDarkLaf;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.plaf.basic.BasicButtonUI;
 import java.awt.*;
 import java.awt.geom.Ellipse2D;
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Properties;
@@ -17,6 +19,8 @@ public class ChatApplication extends JFrame {
     private JPanel contactPanel;
     private JPanel chatApplicationPanel;
     private JPanel chatApplication;
+    private JTextArea messagesTextArea;
+    private JTextField messageInput;
 
     public ChatApplication() throws IOException {
         FrameInit();
@@ -48,24 +52,34 @@ public class ChatApplication extends JFrame {
 
         leftContact.setBackground(Color.decode("#7a7a7a"));
 
-        leftContact.setPreferredSize(new Dimension(70, getHeight())); // Set the preferred size
-        // URL imageUrl = ChatApplication.class.getResource("noyl/images/Screenshot (379).png");
-        //Icon icon = new ImageIcon(imageUrl);
+        leftContact.setPreferredSize(new Dimension(50, getHeight())); // Set the preferred size
+        File selectedFile = Register.getSelectedFile();
 
-        JButton logout = new JButton("Logout"); // Add the path to your image file
+        System.out.println(selectedFile);
+        JLabel label = new JLabel();
+       /* try {
+          //  Image originalImage = ImageIO.read(selectedFile);
+           // Image resizedImage = originalImage.getScaledInstance(50, 50, Image.SCALE_SMOOTH);
+            //   label.setIcon(new ImageIcon(resizedImage));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }*/
+        System.out.println(selectedFile);
+
+
+        JButton logout = new JButton("parametre"); // Add the path to your image file
+        logout.setMaximumSize(new Dimension(Integer.MAX_VALUE, 50));
 
         // Set button alignment to the left
-        logout.setAlignmentX(Component.LEFT_ALIGNMENT);
 
         leftContact.add(Box.createVerticalGlue()); // Push components to the bottom
-        leftContact.add(logout);
+        leftContact.add(label);
 
         chatApplication.add(leftContact, BorderLayout.WEST);
     }
 
 
     public void chat() {
-
         chatApplicationPanel = new JPanel(new BorderLayout());
         chatApplicationPanel.setBackground((Color.white));
         chatApplicationPanel.setPreferredSize(new Dimension(500, getHeight())); // Set the preferred size
@@ -73,26 +87,38 @@ public class ChatApplication extends JFrame {
 
         // Top panel with user information and buttons
         JPanel topPanel = new JPanel();
-        topPanel.setLayout(new GridLayout(1,5));
+        topPanel.setLayout(new GridLayout(1, 5));
         topPanel.add(new JLabel("Username"));
         topPanel.add(Box.createHorizontalGlue()); // Expands to push elements to the sides
         topPanel.add(new JLabel("Online"));
         topPanel.add(new JButton("Call"));
         topPanel.add(new JButton("Video Call"));
         topPanel.add(new JButton("+"));
+
         // Middle panel with messages
         JPanel messagesPanel = new JPanel();
         messagesPanel.setBackground((Color.gray));
+        messagesPanel.setLayout(new GridLayout(2, 2));
 
-        messagesPanel.setLayout(new GridLayout(2,2));
-        messagesPanel.add(new JLabel("Person 1: Hi!"));
-        messagesPanel.add(new JLabel("Person 2: Hello!"));
+        // JTextArea for displaying messages
+        messagesTextArea = new JTextArea();
+        messagesTextArea.setEditable(false);
+        JScrollPane scrollPane = new JScrollPane(messagesTextArea);
+        messagesPanel.add(scrollPane);
+
         // Bottom panel with message input
         JPanel bottomPanel = new JPanel();
-        bottomPanel.setLayout(new GridLayout(1,3));
+        bottomPanel.setLayout(new GridLayout(1, 3));
         bottomPanel.add(new JButton("😊")); // Emoji button
-        bottomPanel.add(new JTextField()); // Message input field
-        bottomPanel.add(new JButton("Send")); // Send button
+
+        // JTextField for message input
+        messageInput = new JTextField();
+        bottomPanel.add(messageInput);
+
+        // JButton for sending messages
+        JButton sendButton = new JButton("Send");
+        sendButton.addActionListener(e -> sendMessage());
+        bottomPanel.add(sendButton);
 
         // Add panels to the main panel
         chatApplicationPanel.add(topPanel, BorderLayout.NORTH);
@@ -100,6 +126,13 @@ public class ChatApplication extends JFrame {
         chatApplicationPanel.add(bottomPanel, BorderLayout.SOUTH);
     }
 
+    private void sendMessage() {
+        String message = messageInput.getText().trim();
+        if (!message.isEmpty()) {
+            messagesTextArea.append("You: " + message + "\n");
+            messageInput.setText(""); // Clear the input field after sending a message
+        }
+    }
     public void contact() {
 
         contactPanel = new JPanel();

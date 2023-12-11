@@ -5,8 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="28ca4385-316a-4aa0-bb98-79115f04a349" name="Changes" comment="salt hashing the password and retrieving it form the database">
+      <change afterPath="$PROJECT_DIR$/src/main/java/noyl/view/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/noyl/DatabaseConnection/DatabaseConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/noyl/DatabaseConnection/DatabaseConnection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/noyl/view/ChatApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/noyl/view/ChatApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/noyl/view/Register.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/noyl/view/Register.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,6 +20,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Python Script" />
         <option value="Class" />
       </list>
     </option>
@@ -39,10 +44,10 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "168",
     "last_opened_file_path": "C:/Users/lenovo/Downloads/svgSalamander-1.1.4.jar",
-    "project.structure.last.edited": "Modules",
+    "project.structure.last.edited": "SDKs",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "project.scopes"
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -51,6 +56,29 @@
       <recent name="C:\Users\lenovo\OneDrive\Bureau\NoylChatAplication\src\main\java\noyl" />
       <recent name="C:\Users\lenovo\OneDrive\Bureau\NoylChatAplication\src\main\java\noyl\images" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="dfd" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="NoylChatAplication" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/main/java/noyl/view" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/main/java/noyl/view/dfd.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
