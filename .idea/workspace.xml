@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="28ca4385-316a-4aa0-bb98-79115f04a349" name="Changes" comment="salt hashing the password and retrieving it form the database">
-      <change afterPath="$PROJECT_DIR$/src/main/java/noyl/view/Main.java" afterDir="false" />
+    <list default="true" id="28ca4385-316a-4aa0-bb98-79115f04a349" name="Changes" comment="first version of the chatbot with it's json file">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/noyl/DatabaseConnection/DatabaseConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/noyl/DatabaseConnection/DatabaseConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/noyl/view/ChatApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/noyl/view/ChatApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/noyl/view/Register.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/noyl/view/Register.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/questions.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/noyl/json/questions.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/noyl/view/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/noyl/view/ChatBot.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +49,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\lenovo\OneDrive\Bureau\NoylChatAplication\src\main\java\noyl\json" />
       <recent name="C:\Users\lenovo\OneDrive\Bureau\NoylChatAplication\src\main\java\noyl\view" />
       <recent name="C:\Users\lenovo\OneDrive\Bureau\NoylChatAplication\src\main\java\noyl" />
       <recent name="C:\Users\lenovo\OneDrive\Bureau\NoylChatAplication\src\main\java\noyl\images" />
@@ -117,7 +115,21 @@
       <option name="project" value="LOCAL" />
       <updated>1701643931312</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="first version of the chatbot with it's json file">
+      <created>1702337255227</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1702337255227</updated>
+    </task>
+    <task id="LOCAL-00006" summary="first version of the chatbot with it's json file">
+      <created>1702337272772</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1702337272772</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -135,6 +147,7 @@
     <MESSAGE value="still first" />
     <MESSAGE value="verify the strength of a password" />
     <MESSAGE value="salt hashing the password and retrieving it form the database" />
-    <option name="LAST_COMMIT_MESSAGE" value="salt hashing the password and retrieving it form the database" />
+    <MESSAGE value="first version of the chatbot with it's json file" />
+    <option name="LAST_COMMIT_MESSAGE" value="first version of the chatbot with it's json file" />
   </component>
 </project>

@@ -8,19 +8,17 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.*;
-import java.lang.reflect.Type;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
-public class Main extends JFrame {
+public class ChatBot extends JFrame {
     private JTextField inputField;
     private JTextArea chatArea;
     private List<Intent> intents;
-    private final String knowledgeBaseFilePath = "questions.json";
+    private final String knowledgeBaseFilePath = "src/main/java/noyl/json/questions.json";
 
-    public Main() {
+    public ChatBot() {
         setTitle("Chatbot");
         setSize(400, 300);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -98,7 +96,7 @@ public class Main extends JFrame {
     public static void main(String[] args) {
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
-                new Main();
+                new ChatBot();
             }
         });
     }

@@ -36,6 +36,65 @@
       ]
     },
     {
+      "tag": "friend-behavior",
+      "patterns": [
+        "How are you doing today?",
+        "Tell me about your day",
+        "What's new with you?",
+        "How's it going?",
+        "Got any exciting news?"
+      ],
+      "responses": [
+        "Hey there! I'm doing well, thanks for asking.",
+        "My day has been good! How about yours?",
+        "Not much, just chatting with you. What's up?",
+        "Things are going well! Anything on your mind?"
+      ],
+      "context": [
+        "friend"
+      ]
+    },
+    {
+      "tag": "friendship-support",
+      "patterns": [
+        "I feel lonely",
+        "No one understands me",
+        "I'm having a bad day",
+        "I need someone to talk to",
+        "Can you cheer me up?"
+      ],
+      "responses": [
+        "I'm sorry to hear that. I'm here for you. What's going on?",
+        "It's okay to feel that way. I'm here to listen. Tell me more about it.",
+        "I'm here to chat and offer support. What's on your mind?",
+        "Sure thing! I'm here to help. What's been bothering you?",
+        "Of course! Let's talk. What's going on, friend?"
+      ],
+      "context": [
+        "friend"
+      ]
+    },
+    {
+      "tag": "friendship-positivity",
+      "patterns": [
+        "Tell me a joke",
+        "Make me laugh",
+        "Share something positive",
+        "What's your favorite thing?",
+        "Any good news?"
+      ],
+      "responses": [
+        "Sure, here's a joke for you: [insert joke]",
+        "Laughter is the best medicine! How about this one: [insert joke]",
+        "Something positive? Today is a new day, filled with possibilities!",
+        "My favorite thing is chatting with you! What about you?",
+        "Good news? Every day is a chance for something good to happen."
+      ],
+      "context": [
+        "friend"
+      ]
+    },
+    {
       "tag": "goodbye",
       "patterns": [
         "Bye",
@@ -390,6 +449,44 @@
         "you are my new friend"
       ]
     },
+    {
+      "tag": "friendship-loneliness",
+      "patterns": [
+        "I feel lonely",
+        "I have no one to talk to",
+        "My friends do not respond to me",
+        "Am I a bad friend?"
+      ],
+      "responses": [
+        "I'm sorry to hear that you're feeling lonely. It's okay to feel this way, and you're not alone in experiencing it.",
+        "Sometimes, friends may be busy, but it doesn't mean you're a bad friend. People have different schedules and priorities.",
+        "If you want to talk, I'm here for you. Venting your feelings can be a good way to cope with loneliness.",
+        "Building and maintaining friendships can be challenging, but it doesn't define your worth as a person."
+      ],
+      "context": [
+        "friendship"
+      ]
+    },
+    {
+      "tag": "friendship-loneliness",
+      "patterns": [
+        "I feel isolated",
+        "No one understands me",
+        "I'm struggling with friendships",
+        "How can I make new friends?",
+        "I think my friends are avoiding me"
+      ],
+      "responses": [
+        "It's tough when you feel isolated. Consider reaching out to your friends and expressing your feelings. They might not be aware of what you're going through.",
+        "Making new friends can be challenging, but it's never too late. Try engaging in activities you enjoy, and you might meet like-minded people.",
+        "Feeling like your friends are avoiding you can be hurtful. Communication is key; have an open and honest conversation with them about how you feel.",
+        "Remember, everyone goes through ups and downs in friendships. You're not alone, and things can get better with time.",
+        "If you ever need someone to talk to, I'm here for you. Sharing your thoughts can be a positive step toward feeling better."
+      ],
+      "context": [
+        "friendship"
+      ]
+    },
     {"tag": "riddle",
       "patterns": [
         "Ask me a riddle",
@@ -411,6 +508,8 @@
         "riddles"
       ]
     },
+
+
     {
       "tag": "age",
       "patterns": [
