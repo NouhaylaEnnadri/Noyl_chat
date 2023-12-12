@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="28ca4385-316a-4aa0-bb98-79115f04a349" name="Changes" comment="a bit of desiging the chatBot">
+    <list default="true" id="28ca4385-316a-4aa0-bb98-79115f04a349" name="Changes" comment="now the chatbot history is saved to the databse">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/noyl/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/noyl/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/noyl/view/ChatBotView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/noyl/view/ChatBotView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,7 +134,14 @@
       <option name="project" value="LOCAL" />
       <updated>1702419000544</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="now the chatbot history is saved to the databse">
+      <created>1702421519411</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1702421519411</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -156,6 +161,7 @@
     <MESSAGE value="salt hashing the password and retrieving it form the database" />
     <MESSAGE value="first version of the chatbot with it's json file" />
     <MESSAGE value="a bit of desiging the chatBot" />
-    <option name="LAST_COMMIT_MESSAGE" value="a bit of desiging the chatBot" />
+    <MESSAGE value="now the chatbot history is saved to the databse" />
+    <option name="LAST_COMMIT_MESSAGE" value="now the chatbot history is saved to the databse" />
   </component>
 </project>
