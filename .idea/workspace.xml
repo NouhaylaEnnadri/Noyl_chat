@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="28ca4385-316a-4aa0-bb98-79115f04a349" name="Changes" comment="now the chatbot history is saved to the databse">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="28ca4385-316a-4aa0-bb98-79115f04a349" name="Changes" comment="json modifieed">
+      <change beforePath="$PROJECT_DIR$/src/main/java/noyl/json/questions.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/noyl/json/questions.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,7 +141,14 @@
       <option name="project" value="LOCAL" />
       <updated>1702421519411</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="json modifieed">
+      <created>1702424104524</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1702424104524</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -162,6 +169,7 @@
     <MESSAGE value="first version of the chatbot with it's json file" />
     <MESSAGE value="a bit of desiging the chatBot" />
     <MESSAGE value="now the chatbot history is saved to the databse" />
-    <option name="LAST_COMMIT_MESSAGE" value="now the chatbot history is saved to the databse" />
+    <MESSAGE value="json modifieed" />
+    <option name="LAST_COMMIT_MESSAGE" value="json modifieed" />
   </component>
 </project>
