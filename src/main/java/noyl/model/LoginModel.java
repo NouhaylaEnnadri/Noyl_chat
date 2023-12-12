@@ -1,7 +1,7 @@
 package noyl.model;
 
 public class LoginModel {
-    private String phoneNumber;
+    private static String phoneNumber;
     private String password;
 
     public LoginModel(){
@@ -17,7 +17,7 @@ public class LoginModel {
 
     //getter and setter methods
 
-    public String getPhoneNumber() {
+    public static String getPhoneNumber() {
         return phoneNumber;
     }
 

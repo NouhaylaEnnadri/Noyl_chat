@@ -14,7 +14,8 @@ import java.util.Random;
 
 public class ChatBot extends JFrame {
     private JTextField inputField;
-    private JTextArea chatArea;
+    private DefaultListModel<String> chatModel;
+    private JList<String> chatList;
     private List<Intent> intents;
     private final String knowledgeBaseFilePath = "src/main/java/noyl/json/questions.json";
 
@@ -23,41 +24,45 @@ public class ChatBot extends JFrame {
         setSize(400, 300);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        intents = (List<Intent>) loadIntents();
+        chatModel = new DefaultListModel<>();
+        chatList = new JList<>(chatModel);
+        JScrollPane scrollPane = new JScrollPane(chatList);
 
-        JPanel panel = new JPanel();
         inputField = new JTextField(20);
-        chatArea = new JTextArea(10, 30);
-        chatArea.setEditable(false);
-        JScrollPane scrollPane = new JScrollPane(chatArea);
 
         JButton sendButton = new JButton("Send");
         sendButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 String userInput = inputField.getText();
                 String response = getResponse(userInput);
-                chatArea.append("User: " + userInput + "\n");
-                chatArea.append("Chatbot: " + response + "\n");
+                appendMessage("User: " + userInput, false);
+                appendMessage("Chatbot: " + response, true);
                 inputField.setText("");
             }
         });
 
-        panel.add(inputField);
-        panel.add(sendButton);
+        JPanel panel = new JPanel(new BorderLayout());
+        panel.add(inputField, BorderLayout.CENTER);
+        panel.add(sendButton, BorderLayout.EAST);
 
         add(scrollPane);
         add(BorderLayout.SOUTH, panel);
 
+        // Ensure intents are loaded
+        intents = loadIntents();
+
         setVisible(true);
     }
 
+
+
+
+
     private List<Intent> loadIntents() {
         try (Reader reader = new FileReader(knowledgeBaseFilePath)) {
-            // Change the type to match the JSON structure
             java.lang.reflect.Type type = new TypeToken<Map<String, List<Intent>>>() {}.getType();
             Gson gson = new Gson();
             Map<String, List<Intent>> data = gson.fromJson(reader, type);
-            // Retrieve the intents from the map
             return data != null ? data.get("intents") : null;
         } catch (IOException e) {
             e.printStackTrace();
@@ -65,9 +70,22 @@ public class ChatBot extends JFrame {
         }
     }
 
-
+    private void appendMessage(String message, boolean isChatbot) {
+        String alignmentStyle = isChatbot ? "align=left" : "align=right";
+        String formattedMessage = "<html><p style='width: 75%; padding: 5px; margin: 5px; "
+                + "background-color: " + (isChatbot ? "#add8e6;" : "#e6e6fa;") + "; "
+                + "border-radius: 10px; " + alignmentStyle
+                + "'>" + message + "</p></html>";
+        chatModel.addElement(formattedMessage);
+        chatList.ensureIndexIsVisible(chatModel.size() - 1);
+    }
 
     private String getResponse(String userInput) {
+        if (intents == null) {
+            // Handle the case where intents are not loaded properly
+            return "I'm sorry, I'm currently unable to respond. Please try again later.";
+        }
+
         for (Intent intent : intents) {
             for (String pattern : intent.getPatterns()) {
                 if (userInput.toLowerCase().contains(pattern.toLowerCase())) {
@@ -84,12 +102,11 @@ public class ChatBot extends JFrame {
             int randomIndex = new Random().nextInt(responses.size());
             return responses.get(randomIndex);
         } else {
-            return "I'm sorry, I didn't understand that.";
+            return "I'm sorry, I didn't understand that.\nTeach me how to respond to that, will you?";
         }
     }
 
     private List<String> getDefaultResponses() {
-        // Provide default responses when no intent matches
         return List.of("I'm sorry, I didn't understand that.", "Could you please rephrase that?", "I'm still learning!");
     }
 
@@ -101,12 +118,10 @@ public class ChatBot extends JFrame {
         });
     }
 
-    // Define a class to represent an intent
     static class Intent {
         private String tag;
         private List<String> patterns;
         private List<String> responses;
-        // You can add more fields if needed
 
         public String getTag() {
             return tag;

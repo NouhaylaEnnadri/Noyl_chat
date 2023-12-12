@@ -2,6 +2,7 @@ package noyl.controller;
 
 import noyl.DAO.LoginDao;
 import noyl.model.LoginModel;
+import noyl.view.ChatBotView;
 import noyl.view.Login;
 import noyl.view.Register;
 
@@ -16,14 +17,18 @@ public class LoginController {
         this.view = view;
         this.model = new LoginModel();
         view.getCmdLogin().addActionListener(e -> LoginListener());
-        view.getCmdRegister().addActionListener(e ->switchToRegisterFrame());
+        view.getCmdRegister().addActionListener(e ->switchToChatbot());
 
     }
 
 
-    public void switchToRegisterFrame() {
+    public void switchToChatbot() {
         view.setVisible(false);
-        RegisterController registerController = new RegisterController(new Register());
+        // Create an instance of ChatBotView and make it visible
+        SwingUtilities.invokeLater(() -> {
+            ChatBotView chatBotView = new ChatBotView();
+            chatBotView.setVisible(true);
+        });
 
     }
     public void LoginListener() {

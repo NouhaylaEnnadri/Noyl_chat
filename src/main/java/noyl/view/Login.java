@@ -56,11 +56,7 @@ public class Login extends JFrame {
         cmdLogin = new JButton("Login");
         cmdLogin.addActionListener(e -> {
             this.setVisible(false);
-            try {
-                ChatApplication chat = new ChatApplication();
-            } catch (IOException ex) {
-                throw new RuntimeException(ex);
-            }
+            ChatBotView chat = new ChatBotView();
         });
 
                 JPanel loginPanel = new JPanel(new MigLayout("wrap,fillx,insets 35 45 30 45", "fill,250:280"));
