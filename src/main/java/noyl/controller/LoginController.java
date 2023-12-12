@@ -25,10 +25,7 @@ public class LoginController {
     public void switchToChatbot() {
         view.setVisible(false);
         // Create an instance of ChatBotView and make it visible
-        SwingUtilities.invokeLater(() -> {
-            ChatBotView chatBotView = new ChatBotView();
-            chatBotView.setVisible(true);
-        });
+        RegisterController registerController = new RegisterController(new Register());
 
     }
     public void LoginListener() {

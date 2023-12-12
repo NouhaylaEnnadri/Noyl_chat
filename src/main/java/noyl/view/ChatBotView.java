@@ -17,6 +17,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
@@ -100,17 +101,40 @@ public class ChatBotView  extends JFrame {
             }
         });
 
+        // Retrieve chat history from the database
+        List<ChatMessage> chatHistory = getChatHistoryFromDatabase();
+
+        // Display chat history in the GUI
+        chatModel.clear(); // Clear existing messages
+
+        for (ChatMessage chatMessage : chatHistory) {
+            appendMessage(chatMessage.getPhoneNumber(), chatMessage.getMessage(), chatMessage.isChatbot());
+        }
+
+        // Set visibility after loading chat history
         setVisible(true);
     }
 
     private void sendButon() {
-        String userName = getUserNameFromDatabase(); // Replace with the actual method to retrieve the user's name
+        String userName = getUserNameFromDatabase();
         String userInput = inputField.getText();
         String response = getResponse(userInput);
+
+        // Append user message to the GUI
         appendMessage(userName, userInput, false);
+
+        // Store user message in the database
+        storeMessageInDatabase(userName, userInput, false);
+
+        // Append chatbot message to the GUI
         appendMessage("Chatbot", response, true);
+
+        // Store chatbot message in the database
+        storeMessageInDatabase("Chatbot", response, true);
+
         inputField.setText("");
     }
+
 
     public String getUserNameFromDatabase() {
         try {
@@ -243,6 +267,48 @@ public class ChatBotView  extends JFrame {
             e.printStackTrace();
         }
     }
+    private void storeMessageInDatabase(String userName, String message, boolean isChatbot) {
+        try {
+            Connection connection = DatabaseConnection.getConnection();
+            String query = "INSERT INTO bot_history (phoneNumber, message, is_chatbot) VALUES (?, ?, ?)";
+
+            try (var preparedStatement = connection.prepareStatement(query)) {
+                preparedStatement.setString(1, LoginModel.getPhoneNumber());
+                preparedStatement.setString(2, message);
+                preparedStatement.setBoolean(3, isChatbot);
+
+                preparedStatement.executeUpdate();
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private List<ChatMessage> getChatHistoryFromDatabase() {
+        List<ChatMessage> chatHistory = new ArrayList<>();
+
+        try {
+            Connection connection = DatabaseConnection.getConnection();
+            String query = "SELECT phoneNumber, message, is_chatbot FROM bot_history WHERE phoneNumber = ? ORDER BY timestamp";
+
+            try (var preparedStatement = connection.prepareStatement(query)) {
+                preparedStatement.setString(1, LoginModel.getPhoneNumber());
+                var resultSet = preparedStatement.executeQuery();
+
+                while (resultSet.next()) {
+                    String phoneNumber = resultSet.getString("phoneNumber");
+                    String message = resultSet.getString("message");
+                    boolean isChatbot = resultSet.getBoolean("is_chatbot");
+
+                    chatHistory.add(new ChatMessage(phoneNumber, message, isChatbot));
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return chatHistory;
+    }
 
     static class Intent {
         private String tag;
@@ -259,6 +325,29 @@ public class ChatBotView  extends JFrame {
 
         public List<String> getResponses() {
             return responses;
+        }
+    }
+    public class ChatMessage {
+        private String phoneNumber; // Change this to match your actual variable name
+        private String message;
+        private boolean isChatbot;
+
+        public ChatMessage(String phoneNumber, String message, boolean isChatbot) {
+            this.phoneNumber = phoneNumber;
+            this.message = message;
+            this.isChatbot = isChatbot;
+        }
+
+        public String getPhoneNumber() {
+            return phoneNumber;
+        }
+
+        public String getMessage() {
+            return message;
+        }
+
+        public boolean isChatbot() {
+            return isChatbot;
         }
     }
 
