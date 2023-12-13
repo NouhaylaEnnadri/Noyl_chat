@@ -122,7 +122,7 @@ public class ChatBot extends JFrame {
 
     static class Intent {
         private String tag;
-        private List<String> patterns;
+        List<String> patterns;
         private List<String> responses;
 
         public String getTag() {
