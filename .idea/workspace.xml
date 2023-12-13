@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="28ca4385-316a-4aa0-bb98-79115f04a349" name="Changes" comment="json modifieed">
+    <list default="true" id="28ca4385-316a-4aa0-bb98-79115f04a349" name="Changes" comment="modifictaion the the text to suit the size of the frame">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/noyl/json/questions.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/noyl/json/questions.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/noyl/DAO/LoginDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/noyl/DAO/LoginDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/noyl/util/HashPwd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/noyl/util/HashPwd.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/noyl/view/ChatBotView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/noyl/view/ChatBotView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,19 +36,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH&quot;: &quot;168&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/lenovo/Downloads/svgSalamander-1.1.4.jar&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "168",
+    "last_opened_file_path": "C:/Users/lenovo/Downloads/svgSalamander-1.1.4.jar",
+    "project.structure.last.edited": "SDKs",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.importing"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\lenovo\OneDrive\Bureau\NoylChatAplication\src\main\java\noyl\json" />
@@ -156,7 +159,14 @@
       <option name="project" value="LOCAL" />
       <updated>1702424742327</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="modifictaion the the text to suit the size of the frame">
+      <created>1702425651884</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1702425651884</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -178,6 +188,7 @@
     <MESSAGE value="a bit of desiging the chatBot" />
     <MESSAGE value="now the chatbot history is saved to the databse" />
     <MESSAGE value="json modifieed" />
-    <option name="LAST_COMMIT_MESSAGE" value="json modifieed" />
+    <MESSAGE value="modifictaion the the text to suit the size of the frame" />
+    <option name="LAST_COMMIT_MESSAGE" value="modifictaion the the text to suit the size of the frame" />
   </component>
 </project>

@@ -1,6 +1,7 @@
 package noyl.view;
 
 import com.formdev.flatlaf.FlatDarkLaf;
+
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import noyl.DatabaseConnection.DatabaseConnection;

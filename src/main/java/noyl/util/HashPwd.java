@@ -1,5 +1,6 @@
 package noyl.util;
 
+
 import org.mindrot.jbcrypt.BCrypt;
 
 public class HashPwd {

@@ -2,7 +2,6 @@ package noyl.DAO;
 
 import noyl.DatabaseConnection.DatabaseConnection;
 import noyl.util.HashPwd;
-import org.mindrot.jbcrypt.BCrypt;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
