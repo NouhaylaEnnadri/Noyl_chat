@@ -184,17 +184,42 @@ public class ChatBotView  extends JFrame {
         String textColor = isChatbot ? "#FFFFFF;" : "#FFFFFF;";
         String borderRadius = isChatbot ? "10px 0 10px 10px" : "0 10px 10px 10px"; // Adjust the radius as needed
 
-        String formattedMessage = "<html><div style='"
+        // Set a maximum line length to limit the width
+        int maxLineLength = 40; // Adjust the length as needed
+        String formattedMessage = formatMessage((isChatbot ? "Chatbot" : userName) + ": " + message, maxLineLength);
+
+        formattedMessage = "<html><div style='"
                 + "background-color: " + bgColor + "; "
                 + "border-radius: " + borderRadius + "; "
                 + "padding: 5px; "
-                + "text-align: " + alignmentStyle + "'>"
+                + "text-align: " + alignmentStyle + ";'>"
                 + "<span style='color: " + textColor + "'>"
-                + (isChatbot ? "Chatbot" : userName) + ": " + message
-                + "</span></div></html>"; // Use a fixed width (e.g., 250px)
+                + formattedMessage
+                + "</span></div></html>";
 
         chatModel.addElement(formattedMessage);
         chatList.ensureIndexIsVisible(chatModel.size() - 1);
+    }
+
+    private String formatMessage(String message, int maxLineLength) {
+        StringBuilder formattedMessage = new StringBuilder("<html>");
+        String[] words = message.split("\\s+");
+        int currentLineLength = 0;
+
+        for (String word : words) {
+            if (currentLineLength + word.length() <= maxLineLength) {
+                // Add the word to the current line
+                formattedMessage.append(word).append(" ");
+                currentLineLength += word.length() + 1; // Include space
+            } else {
+                // Start a new line with the current word
+                formattedMessage.append("<br>").append(word).append(" ");
+                currentLineLength = word.length() + 1; // Include space
+            }
+        }
+
+        formattedMessage.append("</html>");
+        return formattedMessage.toString();
     }
 
 
