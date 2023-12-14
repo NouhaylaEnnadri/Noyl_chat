@@ -4,10 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="28ca4385-316a-4aa0-bb98-79115f04a349" name="Changes" comment="dependecies problems solved">
+    <list default="true" id="28ca4385-316a-4aa0-bb98-79115f04a349" name="Changes" comment="chat bat can learn now">
+      <change afterPath="$PROJECT_DIR$/src/main/java/noyl/images/home (Custom).png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/noyl/images/menu_15.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/noyl/view/1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/noyl/view/botView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/noyl/view/ChatBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/noyl/view/ChatBot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/noyl/json/questions.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/noyl/json/questions.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/noyl/view/ChatBot.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/noyl/view/ChatBotView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/noyl/view/ChatBotView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -50,13 +54,30 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\lenovo\OneDrive\Bureau\NoylChatAplication\src\main\java\noyl\json" />
       <recent name="C:\Users\lenovo\OneDrive\Bureau\NoylChatAplication\src\main\java\noyl\view" />
-      <recent name="C:\Users\lenovo\OneDrive\Bureau\NoylChatAplication\src\main\java\noyl" />
       <recent name="C:\Users\lenovo\OneDrive\Bureau\NoylChatAplication\src\main\java\noyl\images" />
+      <recent name="C:\Users\lenovo\OneDrive\Bureau\NoylChatAplication" />
+      <recent name="C:\Users\lenovo\OneDrive\Bureau\NoylChatAplication\src\main\java\noyl\json" />
+      <recent name="C:\Users\lenovo\OneDrive\Bureau\NoylChatAplication\src\main\java\noyl" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="noyl.view" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.botView">
+    <configuration name="botView" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="noyl.view.botView" />
+      <module name="NoylChatAplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="noyl.view.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="dfd" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="NoylChatAplication" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -78,6 +99,11 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.botView" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -172,7 +198,14 @@
       <option name="project" value="LOCAL" />
       <updated>1702463635591</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="chat bat can learn now">
+      <created>1702506130154</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1702506130154</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -196,6 +229,7 @@
     <MESSAGE value="json modifieed" />
     <MESSAGE value="modifictaion the the text to suit the size of the frame" />
     <MESSAGE value="dependecies problems solved" />
-    <option name="LAST_COMMIT_MESSAGE" value="dependecies problems solved" />
+    <MESSAGE value="chat bat can learn now" />
+    <option name="LAST_COMMIT_MESSAGE" value="chat bat can learn now" />
   </component>
 </project>

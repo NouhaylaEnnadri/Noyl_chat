@@ -485,6 +485,54 @@
       "responses": [
         "what is new"
       ]
+    },
+    {
+      "patterns": [
+        "are u a homosexual"
+      ],
+      "responses": [
+        "hell ya i am "
+      ]
+    },
+    {
+      "patterns": [
+        "are u a homo"
+      ],
+      "responses": [
+        "yeahh slaayy"
+      ]
+    },
+    {
+      "patterns": [
+        "hamza"
+      ],
+      "responses": [
+        "is that your name"
+      ]
+    },
+    {
+      "patterns": [
+        "saaad"
+      ],
+      "responses": [
+        "what a good name"
+      ]
+    },
+    {
+      "patterns": [
+        "hhghg"
+      ],
+      "responses": [
+        "idk"
+      ]
+    },
+    {
+      "patterns": [
+        "how are u "
+      ],
+      "responses": [
+        "fine thanks what about you"
+      ]
     }
   ]
 }

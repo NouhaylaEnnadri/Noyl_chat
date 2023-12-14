@@ -29,7 +29,7 @@ public class ChatBotView extends JFrame {
     public ChatBotView() {
         setTitle("NOYL ChatBot");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(new Dimension(360, 500));
+        setSize(new Dimension(500, 500));
         setLocationRelativeTo(null);
         setResizable(false);
 
@@ -38,38 +38,56 @@ public class ChatBotView extends JFrame {
         setVisible(true);
     }
 
+
     private void initComponents() {
+
+        JPanel mainPanel = new JPanel(new BorderLayout());
+
+        // Bar at the left
+        JPanel leftBarPanel = new JPanel();
+        leftBarPanel.setPreferredSize(new Dimension(50, getHeight())); // Set the width to 50 and height to the whole height
+        JLabel leftChatbotLabel = new JLabel("☰");
+        leftBarPanel.add(leftChatbotLabel);
+
+        // Chat history display
         chatModel = new DefaultListModel<>();
         chatList = new JList<>(chatModel);
         JScrollPane scrollPane = new JScrollPane(chatList);
 
+        // Input field and emoji button
         inputField = new JTextField(20);
+        JButton emojiButton = new JButton("\uD83D\uDE00");
+        JPanel inputPanel = new JPanel(new BorderLayout());
+        inputPanel.add(inputField, BorderLayout.CENTER);
+        inputPanel.add(emojiButton, BorderLayout.EAST);
+
+        // Send button and input panel
         JButton sendButton = new JButton("Send");
-        JPanel panel = new JPanel(new BorderLayout());
-        panel.add(inputField, BorderLayout.CENTER);
-        panel.add(sendButton, BorderLayout.EAST);
 
-        add(scrollPane);
-        add(BorderLayout.SOUTH, panel);
+        // Bottom panel for input and send button
+        JPanel bottomPanel = new JPanel(new BorderLayout());
+        bottomPanel.add(inputPanel, BorderLayout.CENTER);
+        bottomPanel.add(sendButton, BorderLayout.EAST);
 
+        // Entire panel
+        mainPanel.add(leftBarPanel, BorderLayout.WEST);
+        mainPanel.add(scrollPane, BorderLayout.CENTER);
+        mainPanel.add(bottomPanel, BorderLayout.SOUTH);
+
+        add(mainPanel);
+
+        // Add action listeners, set focus, load intents, configure JList
         sendButton.addActionListener(e -> sendButon());
-        inputField.addKeyListener(new KeyAdapter() {
-            @Override
-            public void keyPressed(KeyEvent e) {
-                if (e.getKeyCode() == KeyEvent.VK_ENTER) {
-                    sendButon();
-                }
-            }
-        });
+        emojiButton.addActionListener(e -> handleEmojiButtonClick());
+        inputField.addActionListener(e -> sendButon());
 
-        // Ensure intents are loaded
         intents = loadIntents();
-
-        // Set focus on the input field
         inputField.requestFocusInWindow();
-
-        // Configure JList
         configureChatList();
+    }
+
+
+    private void handleEmojiButtonClick() {
     }
 
     private void configureChatList() {
