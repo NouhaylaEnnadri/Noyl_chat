@@ -38,9 +38,12 @@ public class LoginController {
 
             if(checkUser(model)){
 
+                view.setLoginSuccessful(true);
+
                System.out.println(" login succefully");
            }
            else{
+                view.setLoginSuccessful(false);
 
                 JOptionPane.showMessageDialog(null, "I guess you are not a part of this app yet . Please go to the the register page.", "Error", JOptionPane.ERROR_MESSAGE);
            }

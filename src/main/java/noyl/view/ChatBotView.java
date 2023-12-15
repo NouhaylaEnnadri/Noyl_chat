@@ -8,11 +8,7 @@ import noyl.model.LoginModel;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
 import java.io.*;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.*;
@@ -20,12 +16,15 @@ import java.util.List;
 
 public class ChatBotView extends JFrame {
 
-    private JTextField inputField;
-    private DefaultListModel<String> chatModel;
-    private JList<String> chatList;
-    private List<Intent> intents;
-    private final String knowledgeBaseFilePath = "src/main/java/noyl/json/questions.json";
+    private static JTextField inputField;
+    private static DefaultListModel<String> chatModel;
+    private static JList<String> chatList;
+    private static List<Intent> intents;
+    private static final String knowledgeBaseFilePath = "src/main/java/noyl/json/questions.json";
 
+    private JPanel leftBarPanel;
+
+    private boolean isExpanded = true;
     public ChatBotView() {
         setTitle("NOYL ChatBot");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -33,8 +32,8 @@ public class ChatBotView extends JFrame {
         setLocationRelativeTo(null);
         setResizable(false);
 
-        initComponents();
-        loadChatHistory();
+initComponents();
+loadChatHistory();
         setVisible(true);
     }
 
@@ -42,12 +41,32 @@ public class ChatBotView extends JFrame {
     private void initComponents() {
 
         JPanel mainPanel = new JPanel(new BorderLayout());
+        JPanel middlePanel = new JPanel(new BorderLayout());
+
+        // profile bar
+        JPanel profileBar = new JPanel();
+        profileBar.setBackground(Color.decode("#33573d")); // Set the initial background color
+
+        JLabel profileLabel = new JLabel("Noyl_BOT");
+        profileBar.add(profileLabel);
 
         // Bar at the left
-        JPanel leftBarPanel = new JPanel();
+        leftBarPanel = new JPanel();
+       // leftBarPanel.setBackground(Color.decode("#343541")); // Set the initial background color
+
         leftBarPanel.setPreferredSize(new Dimension(50, getHeight())); // Set the width to 50 and height to the whole height
-        JLabel leftChatbotLabel = new JLabel("☰");
+        JButton leftChatbotLabel = new JButton(":");
+        leftChatbotLabel.setBorderPainted(false);
         leftBarPanel.add(leftChatbotLabel);
+
+        leftChatbotLabel.addActionListener(e -> {
+            if (isExpanded) {
+                collapse();
+            } else {
+                expand();
+            }
+            isExpanded = !isExpanded;
+        });
 
         // Chat history display
         chatModel = new DefaultListModel<>();
@@ -69,11 +88,14 @@ public class ChatBotView extends JFrame {
         bottomPanel.add(inputPanel, BorderLayout.CENTER);
         bottomPanel.add(sendButton, BorderLayout.EAST);
 
+        // middle panel
+        middlePanel.add(scrollPane, BorderLayout.CENTER);
+        middlePanel.add(bottomPanel, BorderLayout.SOUTH);
+        middlePanel.add(profileBar, BorderLayout.NORTH);
+
         // Entire panel
         mainPanel.add(leftBarPanel, BorderLayout.WEST);
-        mainPanel.add(scrollPane, BorderLayout.CENTER);
-        mainPanel.add(bottomPanel, BorderLayout.SOUTH);
-
+        mainPanel.add(middlePanel, BorderLayout.CENTER);
         add(mainPanel);
 
         // Add action listeners, set focus, load intents, configure JList
@@ -81,32 +103,28 @@ public class ChatBotView extends JFrame {
         emojiButton.addActionListener(e -> handleEmojiButtonClick());
         inputField.addActionListener(e -> sendButon());
 
-        intents = loadIntents();
+        intents = ChatBotView.loadIntents();
         inputField.requestFocusInWindow();
-        configureChatList();
+        ChatBotView.configureChatList();
     }
 
 
-    private void handleEmojiButtonClick() {
+    private void expand() {
+        // Code to handle expansion
+        leftBarPanel.setPreferredSize(new Dimension(100, getHeight()));  // Adjust the size as needed
+        leftBarPanel.setLayout(new BorderLayout());
+
+        // Add the logout button only if it hasn't been added before
+        JButton logoutButton = new JButton("Log out");
+        logoutButton.addActionListener(e -> handleLogout());
+        leftBarPanel.add(logoutButton, BorderLayout.SOUTH);
+
+        // Update the layout
+        leftBarPanel.revalidate();
+        leftBarPanel.repaint();
     }
 
-    private void configureChatList() {
-        chatList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-        chatList.setLayoutOrientation(JList.VERTICAL);
-        chatList.setVisibleRowCount(-1); // Allows it to expand vertically
-
-        // Set the cell renderer to align the text properly
-        chatList.setCellRenderer(new DefaultListCellRenderer() {
-            @Override
-            public Component getListCellRendererComponent(JList<?> list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
-                JLabel label = (JLabel) super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
-                label.setHorizontalAlignment(((String) value).contains("Chatbot") ? SwingConstants.RIGHT : SwingConstants.LEFT);
-                return label;
-            }
-        });
-    }
-
-    private void sendButon() {
+    void sendButon() {
         String userName = getUserNameFromDatabase();
         String userInput = inputField.getText();
 
@@ -144,7 +162,50 @@ public class ChatBotView extends JFrame {
         inputField.setText("");
     }
 
-    private void learnFromUserInput(String userInput) {
+    private void handleLogout() {
+    }
+
+    private void collapse() {
+        // Code to handle collapse
+        leftBarPanel.setPreferredSize(new Dimension(50, getHeight()));  // Adjust the size as needed
+
+        // Remove the logout button if it exists
+        Component[] components = leftBarPanel.getComponents();
+        for (Component component : components) {
+            if (component instanceof JButton && ((JButton) component).getText().equals("Log out")) {
+                leftBarPanel.remove(component);
+                break;
+            }
+        }
+
+        // Update the layout
+        leftBarPanel.revalidate();
+        leftBarPanel.repaint();
+    }
+
+
+    private void handleEmojiButtonClick() {
+    }
+
+    static void configureChatList() {
+        chatList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        chatList.setLayoutOrientation(JList.VERTICAL);
+        chatList.setVisibleRowCount(-1); // Allows it to expand vertically
+
+        // Set the cell renderer to align the text properly
+        chatList.setCellRenderer(new DefaultListCellRenderer() {
+            @Override
+            public Component getListCellRendererComponent(JList<?> list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
+                JLabel label = (JLabel) super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
+                label.setHorizontalAlignment(((String) value).contains("Chatbot") ? SwingConstants.RIGHT : SwingConstants.LEFT);
+                return label;
+            }
+        });
+    }
+
+
+
+    void learnFromUserInput(String userInput) {
         // Ask the user for the correct response and update the JSON file
         String response = JOptionPane.showInputDialog(
                 this,
@@ -152,7 +213,6 @@ public class ChatBotView extends JFrame {
                 "Teach Me",
                 JOptionPane.QUESTION_MESSAGE
         );
-
         // Validate the user-provided response
         if (response != null && !response.trim().isEmpty()) {
             // Learn and store the new intent in the JSON file
@@ -164,12 +224,12 @@ public class ChatBotView extends JFrame {
         }
     }
 
-    private String getDefaultLearningResponse() {
+    static String getDefaultLearningResponse() {
         return "I'm sorry, I didn't understand that.\nTeach me how to respond to that, will you?";
     }
 
 
-    private void learnAndStore(String userInput, String response) {
+    static void learnAndStore(String userInput, String response) {
         // Check if the input already exists in intents
         boolean isNewInput = true;
         for (Intent intent : intents) {
@@ -214,7 +274,7 @@ public class ChatBotView extends JFrame {
         }
     }
 
-    private String getUserNameFromDatabase() {
+    static String getUserNameFromDatabase() {
         try {
             // Establish the database connection
             Connection connection = DatabaseConnection.getConnection();
@@ -239,7 +299,7 @@ public class ChatBotView extends JFrame {
         }
     }
 
-    private List<Intent> loadIntents() {
+    static List<Intent> loadIntents() {
         try (Reader reader = new FileReader(knowledgeBaseFilePath)) {
             java.lang.reflect.Type type = new TypeToken<Map<String, List<Intent>>>() {}.getType();
             Gson gson = new Gson();
@@ -251,7 +311,7 @@ public class ChatBotView extends JFrame {
         }
     }
 
-    private void appendMessage(String userName, String message, boolean isChatbot) {
+    static void appendMessage(String userName, String message, boolean isChatbot) {
         String alignmentStyle = isChatbot ? "right" : "left";
         String bgColor = isChatbot ? "#2E2E2E;" : "#3F3F3F;";
         String textColor = isChatbot ? "#FFFFFF;" : "#FFFFFF;";
@@ -274,7 +334,7 @@ public class ChatBotView extends JFrame {
         chatList.ensureIndexIsVisible(chatModel.size() - 1);
     }
 
-    private String formatMessage(String message, int maxLineLength) {
+    private static String formatMessage(String message, int maxLineLength) {
         StringBuilder formattedMessage = new StringBuilder("<html>");
         String[] words = message.split("\\s+");
         int currentLineLength = 0;
@@ -295,7 +355,7 @@ public class ChatBotView extends JFrame {
         return formattedMessage.toString();
     }
 
-    private String getResponse(String userInput) {
+    static String getResponse(String userInput) {
         if (intents == null) {
             // Handle the case where intents are not loaded properly
             return "I'm sorry, I'm currently unable to respond. Please try again later.";
@@ -315,7 +375,7 @@ public class ChatBotView extends JFrame {
         return getRandomResponse(Collections.singletonList(getDefaultLearningResponse()));
     }
 
-    private boolean isPartialMatch(String userInput, String pattern) {
+    private static boolean isPartialMatch(String userInput, String pattern) {
         // Set a threshold for partial matching, adjust as needed (e.g., 0.8 for 80% match)
         double threshold = 0.8;
 
@@ -336,7 +396,7 @@ public class ChatBotView extends JFrame {
     }
 
 
-    private String getRandomResponse(List<String> responses) {
+    private static String getRandomResponse(List<String> responses) {
         if (responses != null && !responses.isEmpty()) {
             int randomIndex = new Random().nextInt(responses.size());
             return responses.get(randomIndex);
@@ -346,7 +406,7 @@ public class ChatBotView extends JFrame {
     }
 
 
-    private void saveIntentsToJson() {
+    private static void saveIntentsToJson() {
         try (Writer writer = new FileWriter(knowledgeBaseFilePath)) {
             // Convert List<Intent> to JSON with pretty printing
             Gson gson = new GsonBuilder().setPrettyPrinting().create();
@@ -371,7 +431,7 @@ public class ChatBotView extends JFrame {
     }
 
     // Helper method to convert List<String> to JsonArray
-    private JsonArray toJsonArray(List<String> list) {
+    private static JsonArray toJsonArray(List<String> list) {
         JsonArray jsonArray = new JsonArray();
         for (String item : list) {
             jsonArray.add(item);
@@ -379,7 +439,7 @@ public class ChatBotView extends JFrame {
         return jsonArray;
     }
 
-    private void storeMessageInDatabase(String userName, String message, boolean isChatbot) {
+    static void storeMessageInDatabase(String userName, String message, boolean isChatbot) {
         try {
             Connection connection = DatabaseConnection.getConnection();
             String query = "INSERT INTO bot_history (phoneNumber, message, is_chatbot) VALUES (?, ?, ?)";

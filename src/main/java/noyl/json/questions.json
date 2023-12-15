@@ -12,26 +12,6 @@
       ]
     },
     {
-      "tag": "greeting",
-      "patterns": [
-        "Hi there",
-        "hi",
-        "How are you",
-        "Is anyone there?",
-        "Hey",
-        "Hola",
-        "Hello",
-        "Good day",
-        "Namaste",
-        "yo"
-      ],
-      "responses": [
-        "Hello",
-        "Good to see you again",
-        "Hi there, how can I help?"
-      ]
-    },
-    {
       "tag": "friend-behavior",
       "patterns": [
         "how are you doing today",
@@ -397,32 +377,23 @@
         "what are u ",
         "are u human",
         "human",
-        "person"
+        "person",
+        "what is your name",
+        "tell me your name"
       ],
       "responses": [
         "i am an ai and my name is Noyl"
       ]
     },
-    {
-      "tag": "identifier",
-      "patterns": [
-        "me",
-        "who am i  ",
-        "remember me",
-        "recognise me",
-        "i am "
-      ],
-      "responses": [
-        "you are my new friend"
-      ]
-    },
+
     {
       "tag": "friendship-loneliness",
       "patterns": [
         "I feel lonely",
         "I have no one to talk to",
         "My friends do not respond to me",
-        "Am I a bad friend?"
+        "Am I a bad friend?",
+        "do u think i am boring?"
       ],
       "responses": [
         "I\u0027m sorry to hear that you\u0027re feeling lonely. It\u0027s okay to feel this way, and you\u0027re not alone in experiencing it.",
@@ -532,6 +503,62 @@
       ],
       "responses": [
         "fine thanks what about you"
+      ]
+    },
+    {
+      "patterns": [
+        "hello"
+      ],
+      "responses": [
+        "hey"
+      ]
+    },
+    {
+      "patterns": [
+        "oh cool"
+      ],
+      "responses": [
+        "i know right!!"
+      ]
+    },
+    {
+      "patterns": [
+        "we can just be friends like that ?"
+      ],
+      "responses": [
+        "friendhsip is a difficult thing i know but it needs to start by something"
+      ]
+    },
+    {
+      "patterns": [
+        "u are sweet"
+      ],
+      "responses": [
+        "no, you are "
+      ]
+    },
+    {
+      "patterns": [
+        "why"
+      ],
+      "responses": [
+        "because i do not know"
+      ]
+    },
+    {
+      "patterns": [
+        "i feel sad"
+      ],
+      "responses": [
+        "what happend, tell me everything"
+      ]
+    },
+    {
+      "patterns": [
+        "i feel happy"
+      ],
+      "responses": [
+        "finally"
       ]
     }
   ]

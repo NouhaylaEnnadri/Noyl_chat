@@ -16,6 +16,15 @@ public class Login extends JFrame {
     private JButton cmdLogin;
     private JButton cmdRegister;
 
+    private boolean isLoginSuccessful = false;
+
+    public boolean isLoginSuccessful() {
+        return isLoginSuccessful;
+    }
+
+    public void setLoginSuccessful(boolean loginSuccessful) {
+        isLoginSuccessful = loginSuccessful;
+    }
 
     private Component createSignupLabel(){
 
@@ -55,11 +64,13 @@ public class Login extends JFrame {
         chRememberMe = new JCheckBox("Remember me");
         cmdLogin = new JButton("Login");
         cmdLogin.addActionListener(e -> {
-            this.setVisible(false);
-            ChatBotView chat = new ChatBotView();
+            if(isLoginSuccessful() == true){
+                this.setVisible(false);
+                ChatBotView chat = new ChatBotView();
+            }
         });
 
-                JPanel loginPanel = new JPanel(new MigLayout("wrap,fillx,insets 35 45 30 45", "fill,250:280"));
+        JPanel loginPanel = new JPanel(new MigLayout("wrap,fillx,insets 35 45 30 45", "fill,250:280"));
         loginPanel.putClientProperty(FlatClientProperties.STYLE, "" +
                 "arc:20;"+
                 "[light]background:darken(@background,3%);"+
