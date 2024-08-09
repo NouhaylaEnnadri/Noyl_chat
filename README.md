@@ -15,9 +15,7 @@ NOYL ChatBot is a Java Swing-based application designed to provide an engaging a
 - [Installation](#installation)
 - [Usage](#usage)
 - [Screenshots](#screenshots)
-- [Conclusion](#conclusion)
-- [License](#license)
-
+  
 ## Features
 
 - **User Authentication**: Secure login and registration with hashed passwords using MySQL.
