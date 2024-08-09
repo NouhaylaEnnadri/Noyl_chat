@@ -37,6 +37,7 @@ NOYL ChatBot is a Java Swing-based application designed to provide an engaging a
 
 The project is structured using the Model-View-Controller (MVC) architecture, ensuring modularity and scalability. Key components include:
 
+```
 /Noyl_chatbot
 │
 ├── /Controller
@@ -56,7 +57,7 @@ The project is structured using the Model-View-Controller (MVC) architecture, en
 │
 └── /JSON
     └── (Chatbot intents and responses)
-
+```
 
 
 ## Usage
